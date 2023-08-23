@@ -39,6 +39,10 @@ public class Loginpage {
 	public void enterPassword(String pwd) {
 		password.clear();
 		password.sendKeys(pwd);
+		
+		
+		
+		
 	}
 
 	public void clickOnLoginButton() {

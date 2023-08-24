@@ -62,109 +62,103 @@ public class def extends Baseclass {
 		}
 
 	}
+	@Then("Close the Browser")
+	public void close_the_browser() {
+		driver.close();
+	}
 
-//	@When("User click on the log out link")
-//	public void user_click_on_the_log_out_link() {
-//		l.clickOnLogOutButton();
-//	}
-
-//	@Then("Close the Browser")
-//	public void close_the_browser() {
-//		driver.close();
-//		driver.quit();
-//	}
 
 //Customr add
 
-	@When("User click on customers Menu")
-	public void user_click_on_customers_menu() {
-		
-		addNewCustPg.clickOnCustomersMenu();
-		log.info("customer menu clicked");
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	@When("click on customers Menu Item")
-	public void click_on_customers_menu_item() {
-		addNewCustPg.clickOnCustomersMenuItem();
-		log.info("customer menu item clicked");
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	@When("click on Add new button")
-	public void click_on_add_new_button() {
-		addNewCustPg.clickOnAddnew();
-		log.info("clicked on add new button.");
-
-	}
-
-	@Then("User can view Add new customer page")
-	public void user_can_view_add_new_customer_page() {
-		String actualTitle = addNewCustPg.getPageTitle();
-		String expectedTitle = "Add a new customer / nopCommerce administration";
-
-		if (actualTitle.equals(expectedTitle)) {
-			log.info("User can view Add new customer page- passed");
-
-			Assert.assertTrue(true);// pass
-		} else {
-			log.info("User can view Add new customer page- failed");
-
-			Assert.assertTrue(false);// fail
-		}
-	}
-
-	@When("User enter customer info")
-	public void user_enter_customer_info() {
-		addNewCustPg.enterEmail("cs129@gmail.com");
-		// addNewCustPg.enterEmail(generateEmailId() + "@gmail.com");
-		addNewCustPg.enterPassword("test1");
-		addNewCustPg.enterFirstName("Prachi");
-		addNewCustPg.enterLastName("Gupta");
-		addNewCustPg.enterGender("Female");
-		addNewCustPg.enterDob("6/13/1988");
-		addNewCustPg.enterCompanyName("CodeStudio");
-		addNewCustPg.enterAdminContent("Admin content");
-		addNewCustPg.enterManagerOfVendor("Vendor 1");
-
-		log.info("customer information entered");
-
-	}
-
-	@When("click on Save button")
-	public void click_on_save_button() {
-		addNewCustPg.clickOnSave();
-		log.info("clicked on save button");
-
-	}
-
-	@Then("User can view confirmation message {string}")
-	public void user_can_view_confirmation_message(String exptectedConfirmationMsg) {
-
-		String bodyTagText = driver.findElement(By.tagName("Body")).getText();
-		if (bodyTagText.contains(exptectedConfirmationMsg)) {
-			Assert.assertTrue(true);// pass
-			log.info("User can view confirmation message - passed");
-
-		} else {
-			log.warn("User can view confirmation message - failed");
-
-			Assert.assertTrue(false);// fail
-
-		}
-
-	}
+//	@When("User click on customers Menu")
+//	public void user_click_on_customers_menu() {
+//		
+//		addNewCustPg.clickOnCustomersMenu();
+//		log.info("customer menu clicked");
+//
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	@When("click on customers Menu Item")
+//	public void click_on_customers_menu_item() {
+//		addNewCustPg.clickOnCustomersMenuItem();
+//		log.info("customer menu item clicked");
+//
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	@When("click on Add new button")
+//	public void click_on_add_new_button() {
+//		addNewCustPg.clickOnAddnew();
+//		log.info("clicked on add new button.");
+//
+//	}
+//
+//	@Then("User can view Add new customer page")
+//	public void user_can_view_add_new_customer_page() {
+//		String actualTitle = addNewCustPg.getPageTitle();
+//		String expectedTitle = "Add a new customer / nopCommerce administration";
+//
+//		if (actualTitle.equals(expectedTitle)) {
+//			log.info("User can view Add new customer page- passed");
+//
+//			Assert.assertTrue(true);// pass
+//		} else {
+//			log.info("User can view Add new customer page- failed");
+//
+//			Assert.assertTrue(false);// fail
+//		}
+	//}
+//
+//	@When("User enter customer info")
+//	public void user_enter_customer_info() {
+//		addNewCustPg.enterEmail("cs129@gmail.com");
+//		// addNewCustPg.enterEmail(generateEmailId() + "@gmail.com");
+//		addNewCustPg.enterPassword("test1");
+//		addNewCustPg.enterFirstName("Prachi");
+//		addNewCustPg.enterLastName("Gupta");
+//		addNewCustPg.enterGender("Female");
+//		addNewCustPg.enterDob("6/13/1988");
+//		addNewCustPg.enterCompanyName("CodeStudio");
+//		addNewCustPg.enterAdminContent("Admin content");
+//		addNewCustPg.enterManagerOfVendor("Vendor 1");
+//
+//		log.info("customer information entered");
+//
+//	}
+//
+//	@When("click on Save button")
+//	public void click_on_save_button() {
+//		addNewCustPg.clickOnSave();
+//		log.info("clicked on save button");
+//
+//	}
+//
+//	@Then("User can view confirmation message {string}")
+//	public void user_can_view_confirmation_message(String exptectedConfirmationMsg) {
+//
+//		String bodyTagText = driver.findElement(By.tagName("Body")).getText();
+//		if (bodyTagText.contains(exptectedConfirmationMsg)) {
+//			Assert.assertTrue(true);// pass
+//			log.info("User can view confirmation message - passed");
+//
+//		} else {
+//			log.warn("User can view confirmation message - failed");
+//
+//			Assert.assertTrue(false);// fail
+//
+//		}
+//
+//	}
 
 }
